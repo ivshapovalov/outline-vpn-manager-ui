@@ -1,0 +1,38 @@
+Options All -Indexes
+AddDefaultCharset utf-8
+DefaultLanguage ru-ru
+
+<Files *.ini>
+    Order deny,allow
+    Deny from all
+    Allow From 127.0.0.1
+</Files>
+
+<Files .htaccess>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+RewriteEngine On
+RewriteCond %{HTTPS} !on
+RewriteCond %{SERVER_PORT} !^443$
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+<ifModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "modification plus 1 second"
+    ExpiresByType text/javascript "modification plus 1 second"
+    ExpiresByType application/x-javascript "modification plus 1 second"
+    ExpiresByType text/html "modification plus 1 second"
+    ExpiresByType application/x-httpd-php "modification plus 1 second"
+    ExpiresDefault "access plus 1 second"
+
+</ifModule>
+
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+
+FileETag None
+

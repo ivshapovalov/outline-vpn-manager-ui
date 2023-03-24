@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4169e1;
+    --background-color: #deebf8;
+    --border-color: white;
+    --border-size: 1px
+}
+
+html, body {
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background: var(--background-color);
+}
+
+.container {
+    margin: 50px;
+    min-width: 300px;
+    text-align: center;
+}

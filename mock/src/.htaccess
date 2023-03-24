@@ -1,0 +1,6 @@
+Order deny,allow
+Deny from all
+
+<Files "controller.php">
+    Allow from all
+</Files>

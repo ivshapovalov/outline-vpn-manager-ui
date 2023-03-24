@@ -1,0 +1,20 @@
+{
+  "name": "ivshapovalov/outline-vpn-manager-ui",
+  "minimum-stability": "dev",
+  "description": "PHP Outline VPN Manager UI",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    "apache/log4php": "2.3.0",
+    "ext-json": "*",
+    "ext-curl": "*",
+    "firebase/php-jwt": "^6.1",
+    "ext-openssl": "*"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  }
+}
